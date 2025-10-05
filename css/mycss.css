@@ -1,48 +1,13 @@
-/* 统一：所有卡片 / 主栏 纯色 0.9 透明度，无渐变 */
-#web_bg,
-#post_bg {
-    background: none;   /* 不用这里的图，已用 body 固定背景 */
+/* ===== 保留：圆角 + 悬停阴影 ===== */
+#recent-posts > .recent-post-item,
+#aside-content .card-widget {
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  transition: all .3s ease;
 }
-
-#aside-content > .card-widget.card-info,
-#aside-content > .card-widget.card-announcement,
-#aside-content > .sticky_layout > .card-widget,
-.layout > #post,
-.layout > #page,
-.layout > #archive,
-#recent-posts > .recent-post-item {
-    background: transparent !important;
-    border-radius: 12px;        /* 保留圆角 */
-    box-shadow: 0 2px 10px rgba(0,0,0,.08); /* 保留阴影 */
+#recent-posts > .recent-post-item:hover,
+#aside-content .card-widget:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,.12);
+  transform: translateY(-2px);
 }
-
-/* 深色模式同逻辑，只是颜色暗一点 */
-[data-theme=dark] #aside-content > .card-widget.card-info,
-[data-theme=dark] #aside-content > .card-widget.card-announcement,
-[data-theme=dark] #aside-content > .sticky_layout > .card-widget,
-[data-theme=dark] .layout > #post,
-[data-theme=dark] .layout > #page,
-[data-theme=dark] .layout > #archive,
-[data-theme=dark] #recent-posts > .recent-post-item {
-    background: transparent !important;
-}
-
-/* Follow Me 按钮保持原色 */
-#aside-content > .card-widget.card-info > #card-info-btn {
-    background-color: #3eb8be;
-    border-radius: 8px;
-}
-
-/* 整站最外层白布 */
-#body-wrap { background: transparent !important; }
-#footer { background: transparent !important; }
-
-/*最通杀的办法*/
-/* 连根拔起所有可能的白底 */
-html, body,
-#body-wrap, #main, #content, .layout,
-#post, #page, #archive,
-#recent-posts, #aside-content {
-    background: none !important;
-    background-color: transparent !important;
-}
+/* ===== 其余全部删除或注释 ===== */
